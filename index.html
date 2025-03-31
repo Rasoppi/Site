@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Com muito Amor</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+         font-family: 'Filxgirl';  /* Nome que você vai usar para a fonte */
+         src: url('fontes/Filxgirl.ttf') format('truetype');  /* Caminho para o arquivo da fonte */
+        }
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #0a0f30;
+            margin: 0;
+            padding: 0;
+            color: white;
+            overflow-x: hidden; /* Permite rolar a tela para baixo no celular */
+        }
+        #botao {
+            padding: 15px 30px;
+            font-size: 20px;
+            margin-top: 20vh;
+            cursor: pointer;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+        }
+        #conteudo {
+            display: none;
+            margin-top: 20px;
+            padding-bottom: 50px; /* Garante espaço extra ao final para rolar */
+        }
+        .carousel {
+            width: 400px;  /* Largura igual ao tamanho de uma imagem */
+            height: 600px; /* Altura da imagem */
+            margin: 20px auto;
+            overflow: hidden; /* Esconde as imagens que saem da área visível */
+            position: relative;
+            border-radius: 20px;
+            border: 3px solid white;
+            box-shadow: 0 0 15px white;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .carousel-wrapper {
+            display: flex;
+            width: 100%;
+            animation: slide 18s infinite; /* Animação de rolagem */
+        }
+
+        .carousel img {
+            width: 400px;  /* Tamanho da imagem */
+            height: 600px; /* Altura da imagem */
+            object-fit: cover;
+            border-radius: 20px;
+        }
+
+        @keyframes slide {
+            0% { transform: translateX(0); }
+            16.66% { transform: translateX(-400px); }
+            33.33% { transform: translateX(-800px); }
+            50% { transform: translateX(-1200px); }
+            66.66% { transform: translateX(-1600px); }
+            83.33% { transform: translateX(-2000px); }
+            100% { transform: translateX(0); } /* Retorna para o início, criando o loop contínuo */
+        }
+      .contador {
+            font-size: 24px;
+            margin: 20px 0;
+            font-weight: bold;
+        }
+        .linha-separadora {
+            width: 80%;
+            height: 2px;
+            background-color: #4a90e2;
+            margin: 20px auto;
+        }
+        .texto {
+            font-size: 18px;
+            padding: 10px;
+            
+        }
+        .textos {
+            font-size: 22px;
+            padding: 10px;
+            font-family: 'Dancing Script';/*fonte da letra*/
+        }
+        .nomes{
+            font-family: 'Filxgirl';/*fonte da letra*/
+            font-size: 75px; /* Aumenta o tamanho da letra */
+            font-weight: bold; /* Deixa mais forte */
+            color:red;
+        }
+        .emoji {
+            position: absolute;
+            font-size: 40px;
+            animation: cair 25s linear infinite;
+            top: 0; /* Emojis começam a cair do topo */
+        }
+        @keyframes cair {
+            0% { 
+                transform: translateY(-20vh); /* Começa um pouco acima da tela */
+                opacity: 1;
+            }
+            100% { 
+                transform: translateY(150vh); /* Desce até o final da tela */
+                opacity: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            #botao {
+                font-size: 18px;
+                padding: 12px 25px;
+            }
+
+            .carousel {
+                max-width: 200px;
+                height: 300px; /* Ajusta a altura do carrossel em dispositivos móveis */
+                scroll-snap-type: x mandatory; /* Faz a rolagem "travar" nas imagens */
+            }
+
+            .carousel img {
+                max-width: 200px; /* Ajusta a largura das imagens */
+                height: 300px; /* Ajusta a altura das imagens */
+            }
+
+            .contador {
+                font-size: 20px;
+            }
+
+            .texto {
+                font-size: 16px;
+            }
+            .emoji {  
+                position: absolute;
+                font-size: 25px;
+                animation: cair 4s linear infinite;
+                top: 0; /* A partir do topo */
+                left: calc(95% * (1 - random())); /* A posição horizontal é agora aleatória dentro da tela */
+                z-index: 100;
+             }
+             @keyframes cair {
+            0% { 
+                transform: translateY(-20vh); /* Começa um pouco acima da tela */
+                opacity: 1;
+            }
+            100% { 
+                transform: translateY(150vh); /* Desce até o final da tela */
+                opacity: 0;
+            }}
+            .carousel-wrapper {
+            display: flex;
+            width: 100%;
+            animation: slide 18s infinite; /* Animação de rolagem */
+        }
+             @keyframes slide {
+            0% { transform: translateX(0); }
+            16.66% { transform: translateX(-200px); }
+            33.33% { transform: translateX(-400px); }
+            50% { transform: translateX(-600px); }
+            66.66% { transform: translateX(-800px); }
+            83.33% { transform: translateX(-1000px); }
+            100% { transform: translateX(-0); } /* Retorna para o início, criando o loop contínuo */
+        }
+        }
+    </style>
+</head>
+<body>
+    <button id="botao">Clique</button>
+    <div id="conteudo">
+        <div class="texto">Para alguém especial</div>
+        <div class="carousel">
+            <div class="carousel-wrapper">
+            <img src="imagens/foto1.png" alt="Imagem 1">
+            <img src="imagens/foto2.png" alt="Imagem 2">
+            <img src="imagens/foto3.png" alt="Imagem 3">
+            <img src="imagens/foto4.png" alt="Imagem 4">
+            <img src="imagens/foto5.png" alt="Imagem 5">
+            <img src="imagens/foto6.png" alt="Imagem 6">
+        </div>
+        </div>
+        <div class="nomes">Nicole e Gabriel<br></div><div class="textos">Para Sempre</div>
+        <div class="contador" id="contador"></div>
+        <div class="linha-separadora"></div>
+        <div class="texto">"Oi, meu amor.
+
+            Te conhecer foi, sem sombra de dúvida, o maior presente que a vida poderia me dar. 
+            Desde o momento em que nos encontramos, algo dentro de mim mudou, e eu sou grato por cada instante que passamos juntos. 
+            Estar ao seu lado, te amar a cada dia, é uma experiência indescritível. 
+            Cada sorriso seu, cada gesto de carinho, preenche meu coração de uma maneira que eu nunca soube que fosse possível. 
+            Você transformou minha vida de uma forma que eu nunca imaginei.
+            
+            A cada dia que passa, me sinto mais seguro, mais tranquilo, porque sei que posso confiar em você de uma forma que nunca confiei em ninguém. 
+            Você se tornou meu porto seguro, meu refúgio em meio às turbulências da vida. 
+            Ter alguém com quem posso contar para tudo, saber que posso ser eu mesmo sem medo de ser julgado, é algo que me enche de uma gratidão imensa.
+             E o melhor de tudo, é saber que você estará ao meu lado, sempre. 
+             Não importa o que aconteça, você sempre estará lá, e isso me dá uma paz que palavras não podem descrever.
+            
+            Você se tornou a minha razão de ser, a pessoa mais importante e preciosa que eu tenho. 
+            Virou uma parte de mim que eu nunca quero perder. 
+            Às vezes, me pego pensando em como seria minha vida sem você, e sinto um vazio que jamais seria preenchido. 
+            Você trouxe alegria, felicidade e, acima de tudo, um amor que eu nunca imaginei sentir. 
+            A cada olhar, a cada toque, sinto o quanto você me faz bem, o quanto me faz ser uma pessoa melhor.
+            
+            Você é o reflexo de tudo o que sempre sonhei, e mais do que isso: é a realização de algo que eu nem sabia que precisava. 
+            Seus gestos de carinho, suas palavras de apoio, seus conselhos sábios, tudo em você me encanta e me faz perceber que estou vivendo o melhor capítulo da minha vida.
+             O amor que você me dá não tem preço, e eu sou eternamente grato por isso. 
+             Quando olho para você, vejo mais do que uma pessoa especial. 
+             vejo alguém que é essencial para minha felicidade, alguém que me completa de uma forma única e indescritível.
+            
+            Nada no mundo pode mudar o que sinto por você.
+             Não importa o que aconteça, eu vou te amar mais a cada dia, mais a cada minuto.
+              Esse amor que sinto por você cresce em intensidade a cada amanhecer, e a cada segundo, eu percebo o quanto sou afortunado por ter você ao meu lado.
+               Você é o meu tudo, a razão da minha felicidade, e meu maior sonho realizado.
+            
+            Eu te amo de uma forma que palavras não podem expressar.
+             E, por mais que eu tente, sei que nunca conseguirei colocar em palavras toda a profundidade desse sentimento.
+              Mas saiba que, independentemente das palavras, meu amor por você é eterno, sem fim, imensurável.
+               Vou te amar para sempre, de uma forma imensurável, mais do que você jamais poderá imaginar.
+                Cada momento ao seu lado é um presente, e cada segundo sem você me faz ansiar pelo próximo encontro.
+            
+            Eu te amo mais, muito mais, muito muito mais, e sempre, para sempre. ❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️"</div>
+    </div>
+    
+    <script>
+        document.getElementById("botao").addEventListener("click", function() {
+            document.getElementById("botao").style.display = "none";
+            document.getElementById("conteudo").style.display = "block";
+            iniciarChuvaDeEmojis();
+        });
+
+        function atualizarContador() {
+            const dataFutura = new Date("2023-04-22").getTime();
+            setInterval(() => {
+                const agora = new Date().getTime();
+                const diferenca = dataFutura - agora;
+                const anos = Math.floor(diferenca / (1000 * 60 * 60 * 24 * 365));
+                const dias = Math.floor((diferenca % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24));
+                const horas = Math.floor((diferenca % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutos = Math.floor((diferenca % (1000 * 60 * 60)) / (1000 * 60));
+                const segundos = Math.floor((diferenca % (1000 * 60)) / 1000);
+                document.getElementById("contador").innerText = `${Math.abs(anos)} Anos ${Math.abs(dias)} Dias ${Math.abs(horas)} Horas ${Math.abs(minutos)} Minutos ${Math.abs(segundos)} Segundos`;
+            }, 1000);
+        }
+        atualizarContador();
+
+        function iniciarChuvaDeEmojis() {
+            setInterval(() => {
+                const emoji = document.createElement("div");
+                emoji.classList.add("emoji");
+                emoji.innerText = "💖";
+                
+                // A posição horizontal é definida entre 0px e a largura da tela
+                const emojiLeft = Math.random() * (window.innerWidth - 30); // Para garantir que o emoji não ultrapasse o limite da tela (30px de margem por causa do tamanho do emoji)
+                emoji.style.left = emojiLeft + 'px'; // Definindo a posição
+
+                emoji.style.animationDuration = Math.random() * 3 + 2 + "s";
+                document.body.appendChild(emoji);
+
+                // Remover o emoji após ele desaparecer da tela
+                setTimeout(() => emoji.remove(), 5000);
+            }, 500);
+        }
+     </script>
+</body>
+</html>
